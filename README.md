@@ -9,7 +9,7 @@ Hay que entender que el sistema esta estructurado de cierta forma, y que hay que
 
 > ### Palabras en ingles y conceptos
 > * **path**: ruta (`/Users/some/Desktop`)
-> * **directory**: directorio quizas lo conozcas mas como carpeta
+> * **folder**: directorio quizas lo conozcas mas como carpeta
 > * **file**: archivo (`texto.txt`)
 > * **/**: slash
 > * **root**: Raiz, el inicio de algo, la raiz de un proyecto es el directorio que lo contiene todo, y la raiz del sistema es (`/`)
@@ -27,7 +27,7 @@ Hay dos tipos de rutas:
 Los comandos tienen diferentes partes, pongamos como ejemplo el comando zip, (el $ significa que es una linea, cada $ indica que es otra linea), este comando no lo usaremos de momento, pero queda bien ejemplificado todas las partes de un comando estandar
 
 ```
-$ zip -r directory.zip directory
+$ zip -r folder.zip folder
 ```
 
 * **zip**: Indica el comando o instruccion que usaremos, hay comandos que reciben comandos (`time`)
@@ -77,7 +77,7 @@ ls *
 ## Añadir directorio
 Para añadir un directorio usaremos el comando `md`:
 ```
-md myDirectory
+md myfolder
 ```
 Cabe resaltar que podemos crear varios a la vez, simplemente poniendo mas:
 ```
@@ -183,7 +183,7 @@ code .
 
 Puedes encadenar varias instrucciones utilizando ";" entre cada una de ellas:
 ```
-md directory; touch directory/file.txt; open directory/file.txt
+md folder; touch folder/file.txt; open folder/file.txt
 ```
 
 ### Usar instrucciones anteriores
