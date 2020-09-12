@@ -205,6 +205,18 @@ less file.txt
 ```
 nano file.txt
 ```
+
+### Abrir archivos
+El comando open nos permite abrir archivos con la aplicacion predeterminada.
+```
+open index.html
+```
+
+Tambien podemos abrir paginas de internet en nuestro navegador
+```
+open https://github.com
+```
+
 ### Para buscar palabras en archivos 
 ```
 grep -rn "texto a buscar" .
