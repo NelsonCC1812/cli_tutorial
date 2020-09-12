@@ -92,14 +92,13 @@ touch script.js
 
 Podemos crear varios archivos a la vez, y tambien podemos crearlos dentro de archivos existentes
 ```
-md index.html scripts/script.js styles/style.css
+touch index.html scripts/script.js styles/style.css
 ```
 ## Comando para copiar
 El comando `cp` nos permite copiar archivos de una ruta a otra
 ```
 cp [origen] [destino]
 ```
-Se puede hacer recursivo (para carpetas), con la opcion `-r`
 
 ## Comando para mover
 ```
