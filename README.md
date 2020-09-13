@@ -31,7 +31,7 @@ $ zip -r folder.zip folder
 ```
 
 * **zip**: Indica el comando o instruccion que usaremos, hay comandos que reciben comandos (`time`)
-* **-r**: Las letras precedidas de un "-" son opciones, distinguimos dos tipos de opciones, dependera tambien de lo que estemos usando, hay casos en las que existen ambas formas para la misma opcion
+* **-r**: Las letras precedidas de un "-" son opciones (flags), distinguimos dos tipos de opciones, dependera tambien de lo que estemos usando, hay casos en las que existen ambas formas para la misma opcion
   * **-w**: Las que solo tienen un guion y una letra
   * **--watch**: Las que tienen dos guiones "--" y una palabra completa
   * > Algunas opciones pueden recibir por medio de un "=" un dato, valor, ruta... (`--prefix=server`)
@@ -253,4 +253,62 @@ Nos permite apagar despues de terminar los procesos (`-h`), sin terminar los pro
 Para cancelarlo tendremos que usar el comando
 ```
 shutdown -c
+```
+
+### Buscar archivos
+
+El comando `find` nos permite encontrar ficheros, tiene esta estructura:
+```
+find [path] [options]
+```
+#### Por nombre
+```
+find ~/Desktop/projects -name "myStuff.md"
+```
+```
+find ~/Desktop/projects -name "*.js"
+```
+```
+find . -name "*config*"
+```
+
+Si utilizas el comando `-iname` en vez de `-name` la busqueda sera case insensitive.
+
+#### Buscar por tipo de fichero
+Utiliza el flag `type` para indicar el tipo de fichero que quieres buscar: `d` (directorio), `f`(fichero regular) y `l` enlace simbolico.
+```
+find ~/Desktop/projects -iname "home" -type d
+```
+
+#### Buscar ficheros por fecha de modificacion
+Utiliza los flags `-mmin` o `-mtime`, seguido de un valor numerico para especificar el tiempo de modificacion.
+
+* `mmin`: Archivos modificados hace `n` minutos.
+* `mtime`: Archivos modificados hace `n` dias.
+
+Puedes añadir `+` para buscar mas antiguos que ese momento y `-` para que sea menor.
+```
+find ~/Desktop -mtime -2
+```
+
+#### Buscar ficheros por usuario y/o grupo
+Utilizando el flag `-user` o el flag `group`.
+```
+find ~/Desktop -user some
+```
+
+### Buscar ficheros por tamaño
+Usa el flag `-size` que recibe un valor numerico seguido de una unidad: `c`(bytes), `k`(kilobytes), `M`(megabytes) o `G`(Gigabytes)
+```
+find . -size 10k -type f
+```
+
+Tambien puedes especificar que sea mayor (`+`) o menor (`-`).
+
+
+#### Excluir de la busqueda
+
+Para excluir por ejemplo una ruta puedes usar:
+```
+find . -name "README.md" -not -path "*.git*"
 ```
